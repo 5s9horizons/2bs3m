@@ -1,0 +1,234 @@
+    /* Global body padding to account for fixed header */
+    
+    :root {
+        --primary-color: #2C3E50;
+        --secondary-color: #E74C3C;
+        --gold-accent: #F1C40F;
+        --text-light: #ECF0F1;
+        --text-dark: #2C3E50;
+        --success-color: #27AE60;
+        --accent-color: #3498db;
+        --gray: rgb(86, 85, 85);
+        --gold: #87CEEB; /* Skyblue, gotta change the name gold to sky blue later on ! */
+        --black: #f9f9f9; /* Very lightgray */
+        --white: #1a1a1a; /* Very dark gray */
+        --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        --hover-transition: all 0.3s ease;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+body {
+  padding-top: 130px;
+  background-color: #f5f5f5; /* Light grey background for light mode */
+}
+/* Fixed header styling */
+header.fixed-top {
+  width: 100%;
+  z-index: 1030;
+}
+/* Top header styling */
+.top-header {
+  background: #f8f9fa;
+}
+.top-header a {
+  color: #333;
+  text-decoration: none;
+}
+/* Bottom header styling */
+.bottom-header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+/* Filter bar horizontal scrolling */
+
+/*.filter-bar {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.filter-bar a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-option {
+  display: inline-block;
+  padding: 5px 15px;
+  margin: 0 5px;
+  border: 1px solid var(--text-color);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.filter-link.active {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}*/
+
+/* Cart Panel sliding menu */
+#cart-panel {
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  background: floralwhite;
+  border-left: 1px solid #ddd;
+  box-shadow: -3px 0 6px rgba(0,0,0,0.1);
+  position: fixed;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  z-index: 1040;
+}
+/* Footer styling */
+footer {
+  background: #343a40;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+/* Masonry item spacing */
+.product-item {
+  margin-bottom: 30px;
+  display: flex;
+}
+/* Product card styling */
+.product-item .card {
+  background-color: #f8f9fa;
+  flex-grow: 1;
+}
+.product-item .card-body {
+  background-color: #e9ecef; /* Slightly different from white */
+}
+.product-item .card-img-top {
+  background-color: #ffffff;
+}
+/* Transition for the icon change */
+#themeToggle i {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* Optional: Add a class for dark mode to adjust the overall look */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+body[data-theme="dark"] .product-item .card {
+  background-color: #1e1e1e;
+}
+body[data-theme="dark"] .product-item .card-body {
+  background-color: #2c2c2c;
+}
+body[data-theme="dark"] .product-item .card-img-top {
+  background-color: #2c2c2c;
+}
+/*body[data-theme="dark"] .filter-bar {
+  background-color: #2c2c2c;
+}*/
+body[data-theme="dark"] .top-header {
+  background-color: #1e1e1e;
+}
+body[data-theme="dark"] .top-header a {
+  color: #e0e0e0;
+}
+body[data-theme="dark"] .bottom-header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #444;
+}
+body[data-theme="dark"] footer {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+body[data-theme="dark"] footer a {
+  color: #e0e0e0;
+}
+/*body[data-theme="dark"] .breadcrumb {
+  background-color: #2c2c2c;
+}*/
+body[data-theme="dark"] #cart-panel {
+  background-color: rgb(90, 89, 88);
+}
+
+.cart-icon {
+    font-size: 1.3rem;
+    position: relative;
+    transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.cart-icon:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--gray);
+    color: var(--black);
+    border-radius: 50%;
+    padding: 0.1rem 0.2rem;
+    font-size: 0.8rem;
+}
+
+.notification-banner {
+  width: 100%;
+  background-color: #00ff84;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.loader-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.3s;
+}
+
+.loader-spinner.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  animation: l14 4s infinite;
+}
+.loader::before,
+.loader::after {    
+  content: "";
+  grid-area: 1/1;
+  border: 8px solid;
+  border-radius: 50%;
+  border-color: red red #0000 #0000;
+  mix-blend-mode: darken;
+  animation: l14 1s infinite linear;
+}
+.loader::after {
+  border-color: #0000 #0000 blue blue;
+  animation-direction: reverse;
+}
+@keyframes l14{ 
+  100%{transform: rotate(1turn)}
+}
