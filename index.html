@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>5s9 E-Shop</title>
+    <link rel="icon" href="favicon.png">
+    <!-- Meta tags for SEO and social media -->
+    <meta name="author" content="5s9 Horizons, Samba Sene">
+    <meta name="description" content="5s9 E-Shop is an online platform for selling computer and electronic products.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="5s9 E-Business">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://5s9horizons.github.io/2bs3m/">
+    <meta property="og:image" content="https://5s9horizons.github.io/5s9ebusiness/favicon.png">
+    <meta property="og:description" content="5s9 E-Shop is an online platform for selling computer and electronic products.">
+    <meta property="og:site_name" content="5s9 E-Shop">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="loader" class="loader-spinner">
+        <div class="loader"></div>
+    </div>
+  
+    <!-- HEADER -->
+    <header class="fixed-top">
+        <!-- Top Header -->
+        <div class="top-header d-flex justify-content-between align-items-center p-2">
+            <div class="logo d-flex align-items-center">
+                <!-- Replace with your logo -->
+                <img src="favicon.png" alt="Logo" style="height:40px;">
+                <span class="ml-2 font-weight-bold">5s9 E-Shop</span>
+            </div>
+            <div class="user-actions d-flex align-items-right">
+                <div class="nav-icons d-flex">
+
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggle" class="btn btn-outline-primary">
+                        <i class="fas fa-sun"></i>
+                    </button>&nbsp;
+
+                    <!-- Cart Button -->
+                    <form class="d-flex">
+                        <button id="cartBtn" class="btn btn-outline-primary cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="cartCount" class="cart-count">0</span><!--class="badge bg-dark text-white ms-1 rounded-pill"-->
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Header -->
+        <div class="bottom-header d-flex justify-content-between align-items-center p-2" style="background-color: rgba(0,0,0,0.1);">
+            <div class="nav-icons d-flex">
+                <!-- Navigation links with icon + text (text hidden on small screens) -->
+                <a href="#" class="mx-2 text-center">
+                    <i class="fas fa-home fa-lg"></i>
+                    <div class="small d-none d-md-block">Home</div>
+                </a>
+                <a href="#" class="mx-2 text-center">
+                    <i class="fas fa-info-circle fa-lg"></i>
+                    <div class="small d-none d-md-block">About</div>
+                </a>
+                <a href="#" class="mx-2 text-center">
+                    <i class="fas fa-th-large fa-lg"></i>
+                    <div class="small d-none d-md-block">Categories</div>
+                </a>
+            </div>
+        
+            <div class="header-controls search-bar d-flex align-items-center">
+                <!-- Search Bar -->
+                <span>
+                    <form class="form-inline mr-3">
+                        <input id="searchInput" class="form-control" type="search" placeholder="Search a product" aria-label="Search">
+                    </form>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Notification Banner -->
+    <div id="notificationBanner" class="notification-banner">
+        <b>WELCOME TO THE 5s9 E-Shop !</b>
+    </div>
+
+    <!-- FILTER BAR (scrollable) 
+
+    <div class="filter-bar bg-secondary text-white py-2">
+        <div class="d-flex">
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="all">All</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="New">New</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Hot">Hot</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Promo">Promo</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Sale">Sale</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Limited">Limited</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Best">Best</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Cosmetics">Cosmetics</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Clothes">Clothes</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Furnitures">Furnitures</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Electronics">Electronics</button>
+            <button class="btn btn-outline-light mx-1 filter-link" data-filter="Office">Office</button>
+        </div>
+    </div> -->
+
+    <!-- BREADCRUMB 
+    <nav aria-label="breadcrumb" class="bg-light py-2">
+        <ol class="breadcrumb container">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+        </ol>
+    </nav> -->
+
+    <!-- PRICE RANGE FILTER 
+    <div class="price-range container my-3"> -->
+
+        <!-- Simple HTML range slider 
+        <input type="range" class="custom-range" id="priceRange" min="0" max="1000" value="1000">
+        <span id="priceValue">Price: 0 - 1000€</span>
+    </div> -->
+
+    <!-- MAIN CONTENT: Products Grid -->
+    <main class="container my-5">
+        <div id="products-grid" class="row">
+            <!-- Product cards will be injected here dynamically -->
+        </div>
+        <!-- Button to view full catalog -->
+        <div class="text-center my-4">
+            <a href="#" class="btn btn-lg btn-outline-secondary">View Full Catalog</a>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <!-- Top left: Detailed site pages -->
+                <div class="col-md-3">
+                    <h5>Pages</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Top right: Newsletter -->
+                <div class="col-md-3">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to our newsletter.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+                    </form>
+                </div>
+                <!-- Bottom left: Copyright -->
+                <div class="col-md-3 d-flex align-items-end">
+                    <p>&copy; 2025 MyShop</p>
+                </div>
+                <!-- Bottom right: Social Media -->
+                <div class="col-md-3 d-flex align-items-end justify-content-end">
+                    <a href="#" class="text-white mx-1"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="text-white mx-1"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="text-white mx-1"><i class="fab fa-instagram fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART PANEL (Sliding panel) -->
+    <div id="cart-panel">
+        <!-- Close button -->
+        <button id="closeCart" class="btn btn-danger m-2"><i class="fas fa-times"></i></button>
+        <div class="p-3">
+            <h4>My Cart</h4>
+            <!-- Cart content goes here -->
+            <ul id="cart-items" class="list-group mb-3"></ul>
+            <p>Total: <span id="cart-total">0.00</span>FCFA</p>
+            <hr>
+            <div class="d-flex justify-content-end">
+                <button id="commandBtn" class="btn btn-success">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Communication Method Modal -->
+    <div class="modal fade" id="communicationModal" tabindex="-1" aria-labelledby="communicationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="communicationModalLabel">Choose Communication Method</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Please choose your preferred communication method:</p>
+                    <button id="emailBtn" class="btn btn-primary btn-block">Email</button>
+                    <button id="whatsappBtn" class="btn btn-success btn-block">WhatsApp</button>
+                    <button id="smsBtn" class="btn btn-info btn-block">SMS</button>
+                    <button id="telegramBtn" class="btn btn-secondary btn-block">Telegram</button>
+                    <button id="messengerBtn" class="btn btn-dark btn-block">Messenger</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery, Bootstrap JS, and Masonry JS via CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    
+    <!-- Optional: imagesLoaded plugin to ensure Masonry layout after images load -->
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="back-to-top.js"></script>
+
+    <!-- Custom JS -->
+    <!-- Link to external JavaScript file -->
+    <script src="script.js" defer></script>
+</body>
+</html>
